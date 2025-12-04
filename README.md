@@ -12,6 +12,9 @@
 * 返回顶部按钮美化
 * 一点微小的工作
 
+**使用方法**
+下载release中的js文件，并手动安装到tampermonkey中。或在线安装[LINK](https://greasyfork.org/zh-CN/scripts/557875-mwca-%E8%AE%A9%E5%BE%AE%E5%8D%9A%E9%87%8D%E6%96%B0%E5%B9%B2%E5%87%80-%E5%8F%88%E5%8D%AB%E7%94%9F)
+
 
 
 **仅供学习、测试和技术研究使用，绝无任何商业目的。**
