@@ -364,7 +364,41 @@ span[title*="会员"] {
             background: linear-gradient(to left, rgba(0,0,0,0.3), transparent) !important;
             pointer-events: auto !important;
         }
+/* 自定义返回顶部按钮样式 */
+#custom-back-to-top {
+    position: fixed !important;
+    bottom: 50px !important;
+    right: 50px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    display: none; /* 初始隐藏 */
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 999999 !important;
+    transition: transform 0.2s, opacity 0.3s !important;
+}
 
+#custom-back-to-top:hover {
+    transform: scale(1.1) !important;
+}
+
+/* 按钮内的箭头图标 */
+#custom-back-to-top svg {
+    width: 24px !important;
+    height: 24px !important;
+    color: #666 !important;
+}
+
+/* 适配微博夜间模式 */
+html[theme="dark"] #custom-back-to-top,
+body.dark #custom-back-to-top {
+    background-color: #2c2c2c !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
         /* 布局调整 */
         .Main_wrap_2GRrG,
         .Main_full_1dfQX,
@@ -585,6 +619,41 @@ span[title*="会员"] {
         console.error("替换Logo失败：", e);
     }
 }
+    function injectBackTop() {
+    // 防止重复注入
+    if (document.getElementById('custom-back-to-top')) return;
+
+    // 创建按钮元素
+    const btn = document.createElement('div');
+    btn.id = 'custom-back-to-top';
+    btn.title = '返回顶部';
+
+    // 注入箭头图标 (SVG)
+    btn.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    `;
+
+    // 点击事件：平滑滚动到顶部
+    btn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    document.body.appendChild(btn);
+
+    // 监听滚动事件控制显示隐藏
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.style.display = 'flex';
+        } else {
+            btn.style.display = 'none';
+        }
+    }, { passive: true });
+}
+
+// 在页面加载及 DOM 变化时尝试执行
+injectBackTop();
 function upgradeImageQuality() {
     try {
         // 1. 扩大搜索范围：包含预览模式大图 _pic_1jk00_ 和预览列表小图 _focusImg_1jk00_
