@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MWCA-让微博重新干净（又卫生）
 // @namespace    http://tampermonkey.net/
-// @version      43.0
+// @version      1.1
 // @description  让微博重新干净（又卫生）
 // @author       qiqikuka
 // @match        *://weibo.com/*
