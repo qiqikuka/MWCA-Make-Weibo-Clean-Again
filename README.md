@@ -10,12 +10,14 @@
 * 多图/视频微博版式优化
 * 顶栏设置图标样式优化
 * 返回顶部按钮美化
+* 左侧分组栏可选显示/隐藏
 * 一点微小的工作
 
 **使用方法**
 * 下载js文件`MWCA.x.x.user.js`，并手动安装到tampermonkey中。或在线安装[LINK](https://greasyfork.org/zh-CN/scripts/557875-mwca-%E8%AE%A9%E5%BE%AE%E5%8D%9A%E9%87%8D%E6%96%B0%E5%B9%B2%E5%87%80-%E5%8F%88%E5%8D%AB%E7%94%9F)
 
-
+**提示**
+* weibo频繁修改类型和变量名，经常导致功能失效，遇到 bug 请提 issue 或 在 Greasy Fork 留言。
 
 **仅供学习、测试和技术研究使用，绝无任何商业目的。**
 
