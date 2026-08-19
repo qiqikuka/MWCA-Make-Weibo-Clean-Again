@@ -11,6 +11,7 @@
 // @grant        GM_getValue
 // @grant        GM_registerMenuCommand
 // @run-at       document-start
+// @license      CC BY‑NC‑SA 4.0
 // ==/UserScript==
 
 (function() {
@@ -608,7 +609,7 @@ textarea#comment-textarea {
         if (document.getElementById('mwca-custom-backtop')) return;
         const btn = document.createElement('div');
         btn.id = 'mwca-custom-backtop';
-        btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13.7365 8.5389 L18.2901 16.5077 A2 2 0 0 1 -1.7365 2.9923 L7.4464 19.5 A2 2 0 0 1 -1.7365 -2.9923 L10.2635 8.5389 A2 2 0 0 1 3.473 0 Z"></path></svg>';
+        btn.innerHTML = '<svg viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg"><path d="M6.2018 0.927786C6.98743 -0.309261 8.79277 -0.309262 9.5784 0.927785L15.4653 10.1972C16.3109 11.5287 15.3543 13.2694 13.777 13.2694H2.00324C0.425879 13.2694 -0.530695 11.5287 0.31494 10.1972L6.2018 0.927786Z"></path></svg>';
         btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
         document.body.appendChild(btn);
         window.addEventListener('scroll', () => {
