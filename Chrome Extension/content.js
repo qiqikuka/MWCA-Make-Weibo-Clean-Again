@@ -710,6 +710,29 @@ textarea#comment-textarea {
             else if (title === "视频") key = "video";
             else if (title === "消息") key = "msg";
             if (!key) return;
+            // /tv 等页面"推荐"(热门)tab 的 href 是 /hot(解析为 weibo.com/hot, 会被微博
+            // 重定向到旧版 d.weibo.com), 与其它页面(https://weibo.com/hot/weibo/102803)
+            // 不一致。微博 JS 路由会读 React 属性里的 /hot 而非 DOM href, 改写 href 无效,
+            // 必须直接接管点击事件强制跳转。
+            if (key === "hot") {
+                const correctHref = 'https://weibo.com/hot/weibo/102803';
+                const curHref = a.getAttribute('href') || '';
+                let resolved = '';
+                try { resolved = new URL(curHref, location.href).href; } catch (e) {}
+                const isWrongHref = /d\.weibo\.com/.test(resolved) ||
+                    (/^https:\/\/weibo\.com\/hot\/?$/.test(resolved));
+                if (isWrongHref && resolved !== correctHref) {
+                    a.setAttribute('href', correctHref);
+                    if (!a.dataset.mwcaHotFix) {
+                        a.dataset.mwcaHotFix = '1';
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.location.href = correctHref;
+                        }, { capture: true });
+                    }
+                }
+            }
             const svg = a.querySelector('svg');
             if (!svg || svg.innerHTML === NAV_ICON_INNER[key]) return;
             injectNavSvg(svg, NAV_ICON_SRCS[key], key);
