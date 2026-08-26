@@ -13,7 +13,8 @@
 
 ### 使用方法
 
-* 下载js文件`MWCA.x.x.user.js`，并手动安装到tampermonkey中。或在线安装[LINK](https://greasyfork.org/zh-CN/scripts/557875-mwca-%E8%AE%A9%E5%BE%AE%E5%8D%9A%E9%87%8D%E6%96%B0%E5%B9%B2%E5%87%80-%E5%8F%88%E5%8D%AB%E7%94%9F)
+* 方法一：下载js文件`MWCA.x.x.user.js`，并手动安装到tampermonkey中。或在线安装[LINK](https://greasyfork.org/zh-CN/scripts/557875-mwca-%E8%AE%A9%E5%BE%AE%E5%8D%9A%E9%87%8D%E6%96%B0%E5%B9%B2%E5%87%80-%E5%8F%88%E5%8D%AB%E7%94%9F)
+* 方法二：下载chrome extension，手动安装至 chrome（在 extension 页面需开启 developer mode）。或前往 [chrome扩展商店在线安装](https://chromewebstore.google.com/detail/mwca-%E8%AE%A9%E5%BE%AE%E5%8D%9A%E9%87%8D%E6%96%B0%E5%B9%B2%E5%87%80%EF%BC%88%E5%8F%88%E5%8D%AB%E7%94%9F%EF%BC%89/okgkjndimjjbdioegpgdnmcdcagfihdd?authuser=0&hl=zh-CN)。
 
 ### 预览
 <img width="1504" height="1101" alt="image" src="https://github.com/user-attachments/assets/f5f8bd71-66c0-4f0a-b9f8-cdb18ea9610c" />
